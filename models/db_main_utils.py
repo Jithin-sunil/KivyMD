@@ -46,7 +46,7 @@ def ensure_tables_exist():
     tables = [
         """
         CREATE TABLE IF NOT EXISTS districts (
-            district_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL
         )
         """,

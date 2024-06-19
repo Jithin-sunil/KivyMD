@@ -1,8 +1,14 @@
+ScreenManager:
+    HomePage:
+    DistrictForm:
+    CategoryForm:
+
 <HomePage>:
+    name: 'home'
     MDBoxLayout:
         orientation: 'vertical'
         spacing: dp(20)
-        padding: dp(30)
+        padding: dp(20)
         md_bg_color: app.theme_cls.bg_normal
 
         MDBoxLayout:
@@ -10,73 +16,106 @@
             size_hint_y: None
             height: dp(56)
             padding: dp(10)
-            
-            MDIcon:
+            md_bg_color: app.theme_cls.primary_color
+
+            MDIconButton:
                 icon: "home"
-                size_hint: None, None
-                size: dp(48), dp(48)
-                pos_hint: {"center_y": 0.5}
                 theme_text_color: "Custom"
-                text_color: app.theme_cls.primary_color
-            
+                text_color: app.theme_cls.bg_normal
+                user_font_size: "32sp"
+                on_press: root.manager.current = 'home'
             MDLabel:
                 text: "Home Page"
                 font_style: "H5"
                 halign: "left"
                 valign: "middle"
-                theme_text_color: "Primary"
-
-            MDIcon:
-                icon: "login"
-                size_hint: None, None
-                size: dp(48), dp(48)
-                pos_hint: {"center_y": 0.5, "right": 1}  
                 theme_text_color: "Custom"
-                text_color: app.theme_cls.primary_color
-            
-            # MDLabel:
-            #     text: "Login"
-            #     font_style: "H5"
-            #     halign: "right"
-            #     valign: "middle"
-            #     theme_text_color: "Primary"
-        
-        Widget:  # Spacer
+                text_color: app.theme_cls.bg_normal
 
-        MDCard:
-            orientation: 'vertical'
-            size_hint: None, None
-            size: dp(360), dp(240)
-            pos_hint: {"center_x": 0.5, "center_y": 0.5}
-            elevation: 2
-            md_bg_color: app.theme_cls.bg_light
-            padding: dp(20)
+            MDIconButton:
+                icon: "login"
+                theme_text_color: "Custom"
+                text_color: app.theme_cls.bg_normal
+                user_font_size: "32sp"
+                on_press: root.manager.current = 'login'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
             spacing: dp(10)
-            
-            MDLabel:
-                text: "Welcome to the Home Page"
-                halign: "center"
-                theme_text_color: "Primary"
-                font_style: "H5"
 
-            MDSeparator:
-                height: dp(1)
+            MDNavigationDrawer:
+                md_bg_color: app.theme_cls.bg_dark
+
+                MDList:
+                    OneLineIconListItem:
+                        text: "Home"
+                        on_press: root.manager.current = 'home'
+                        IconLeftWidget:
+                            icon: "home"
+                    OneLineIconListItem:
+                        text: "District Form"
+                        on_press: root.manager.current = 'district_form'
+                        IconLeftWidget:
+                            icon: "map-marker"
+                    OneLineIconListItem:
+                        text: "Category Form"
+                        on_press: root.manager.current = 'category_form'
+                        IconLeftWidget:
+                            icon: "format-list-bulleted"
 
             MDBoxLayout:
-                orientation: 'horizontal'
-                spacing: dp(10)
-                MDRaisedButton:
-                    text: "Go to District Form"
-                    size_hint: 0.5, None
-                    height: dp(40)
-                    on_press: app.sm.current = 'district_form'
-                    md_bg_color: app.theme_cls.primary_color
+                orientation: 'vertical'
+                padding: dp(20)
+                spacing: dp(20)
+                Widget:  # Spacer
+                # Customize this section as needed
+                MDCard:
+                    orientation: 'vertical'
+                    size_hint: None, None
+                    size: dp(400), dp(300)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    elevation: 2
+                    md_bg_color: app.theme_cls.bg_light
+                    padding: dp(20)
+                    spacing: dp(10)               
+                    MDLabel:
+                        text: "Welcome to the Home Page"
+                        halign: "center"
+                        theme_text_color: "Primary"
+                        font_style: "H5"
 
-                MDRaisedButton:
-                    text: "Go to Category Form"
-                    size_hint: 0.5, None
-                    height: dp(40)
-                    on_press: app.sm.current = 'category_form'
-                    md_bg_color: app.theme_cls.primary_color
-        
-        Widget:  # Spacer
+                    MDSeparator:
+                        height: dp(1)
+
+                    MDLabel:
+                        text: "Select an option below to continue."
+                        halign: "center"
+                        theme_text_color: "Secondary"
+                        font_style: "Body1"
+
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: dp(10)
+                        MDRaisedButton:
+                            text: "Go to District Form"
+                            size_hint: 0.5, None
+                            height: dp(40)
+                            on_press: root.manager.current = 'district_form'
+                            md_bg_color: app.theme_cls.primary_color
+                        MDRaisedButton:
+                            text: "Go to Category Form"
+                            size_hint: 0.5, None
+                            height: dp(40)
+                            on_press: root.manager.current = 'category_form'
+                            md_bg_color: app.theme_cls.primary_color
+                Widget:  # Spacer
+        MDBoxLayout:
+            size_hint_y: None
+            height: dp(30)
+            padding: dp(10)
+            md_bg_color: app.theme_cls.bg_dark
+
+            MDLabel:
+                text: "Status: Ready"
+                halign: "left"
+                theme_text_color: "Primary"

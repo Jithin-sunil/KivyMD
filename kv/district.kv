@@ -1,45 +1,51 @@
-<DistrictForm>:
-    MDBoxLayout:
-        orientation: 'vertical'
-        padding: 20
+# <DistrictForm>:
+#     MDBoxLayout:
+#         orientation: 'vertical'
+#         padding: 20
 
-        MDBoxLayout:  # Style the header section
-            size_hint_y: None
-            height: self.minimum_height
-            spacing: 10
+#         # MDBoxLayout:
+#         #     size_hint_y: None
+#         #     height: self.minimum_height
+#         #     spacing: 10
+#         #     MDIcon:
+#         #         icon: "map-marker"
+#         #         size_hint: None, None
+#         #         size: dp(48), dp(48)
+#         #         pos_hint: {"center_y": 0.5}
+#         #         theme_text_color: "Custom"
+#         #         text_color: app.theme_cls.primary_color
+#         #     MDTextField:
+#         #         id: district_field
+#         #         hint_text: "Enter district name"
+#         #         size_hint_x: 0.8
 
-            MDIcon:
-                icon: "map-marker"
-                size_hint: None, None
-                size: dp(48), dp(48)
-                pos_hint: {"center_y": 0.5}
-                theme_text_color: "Custom"
-                text_color: app.theme_cls.primary_color
+#         #     MDRaisedButton:
+#         #         text: "Submit"
+#         #         on_release: root.submit_district()
 
-            MDTextField:
-                id: district_field
-                hint_text: "Enter district name"
-                size_hint_x: 0.8
+#         MDBoxLayout:
+#             id: table_container
+#             orientation: 'vertical'
+#             padding: 10
+#             theme_text_color: "Primary"
 
-            MDRaisedButton:
-                text: "Submit"
-                on_release: root.submit_district()
+#         MDBoxLayout:
+#             size_hint_y: None
+#             height: self.minimum_height
+#             spacing: 10
+#             MDIcon:
+#                 icon: "home"
+#                 size_hint: None, None
+#                 size: dp(48), dp(48)
+#                 pos_hint: {"center_y": 0.5}
+#                 theme_text_color: "Custom"
+#                 text_color: app.theme_cls.primary_color
 
-        MDBoxLayout:  # Style the table container section
-            id: table_container
-            orientation: 'vertical'
-            padding: 10
-            theme_text_color: "Primary"
-
-        MDBoxLayout:  # Style the footer section
-            size_hint_y: None
-            height: self.minimum_height
-            spacing: 10
-
-            MDIcon:
-                icon: "home"
-                size_hint: None, None
-                size: dp(48), dp(48)
-                pos_hint: {"center_y": 0.5}
-                theme_text_color: "Custom"
-                text_color: app.theme_cls.primary_color
+#             MDRaisedButton:
+#                 text: "Go to Home"
+#                 size_hint: None, None
+#                 height: dp(40)
+#                 width: dp(150)
+#                 pos_hint: {"center_y": 0.5}
+#                 on_press: app.sm.current = 'homepage'
+#                 md_bg_color: app.theme_cls.primary_color
